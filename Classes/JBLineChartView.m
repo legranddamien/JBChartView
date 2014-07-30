@@ -1179,8 +1179,8 @@ static UIColor *kJBLineChartViewDefaultLineSelectionFillColor = nil;
         {
             shapeLayer.lineCap = kCALineCapButt;
             shapeLayer.lineJoin = kCALineJoinMiter;
-            shapeFillLayer.lineCap = kCALineCapRound;
-            shapeFillLayer.lineJoin = kCALineJoinRound;
+            shapeFillLayer.lineCap = kCALineCapButt;
+            shapeFillLayer.lineJoin = kCALineJoinMiter;
         }
         
         NSAssert([self.delegate respondsToSelector:@selector(lineChartLinesView:widthForLineAtLineIndex:)], @"JBLineChartLinesView // delegate must implement - (CGFloat)lineChartLinesView:(JBLineChartLinesView *)lineChartLinesView widthForLineAtLineIndex:(NSUInteger)lineIndex");
@@ -1288,6 +1288,8 @@ static UIColor *kJBLineChartViewDefaultLineSelectionFillColor = nil;
         callbackCopy();
     }
 }
+
+#pragma mark - View helpers
 
 - (JBLineLayer *)lineLayerForLineIndex:(NSUInteger)lineIndex
 {
